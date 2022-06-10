@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject Player2D;
+    [SerializeField] private TextMeshProUGUI text;
+    private int bestScore;
     bool player_dead;
     private Rigidbody2D rb;
     public float _speed;
@@ -30,18 +33,28 @@ public class PlayerController : MonoBehaviour
         rb.velocity = transform.up * _speed;
 
     }
-   
+    private void Update()
+    {
+        text.text = "velocity: " + _speed + " Score: " + Timer.second;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (collision.gameObject.layer)
         {
             case 6:
+                if(Timer.second > PlayerPrefs.GetInt("BestScore", 0))
+                {
+                    bestScore = (int)Timer.second;
+                    PlayerPrefs.SetInt("BestScore", bestScore);
+                }
+                text.text = "BestScore: " + PlayerPrefs.GetInt("BestScore", 0);
                 Destroy(gameObject);
                 Time.timeScale = 0;
                 break;
             case 8:
-                print(1);
+
                 break;
         }
     }
