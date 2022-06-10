@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
                     bestScore = (int)Timer.second;
                     PlayerPrefs.SetInt("BestScore", bestScore);
                 }
-                text.text = "BestScore: " + PlayerPrefs.GetInt("BestScore", 0);
+                text.text = "BestScore: " + PlayerPrefs.GetInt("BestScore", 0) + "\n Your Score:" + Timer.second;
                 Destroy(gameObject);
                 Time.timeScale = 0;
                 break;
