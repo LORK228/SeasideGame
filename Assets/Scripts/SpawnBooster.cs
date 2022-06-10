@@ -9,7 +9,7 @@ public class SpawnBooster : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("1");
+   
         if (collision.gameObject.layer == 7)
         {
             spawnBoost = Instantiate(boost);
