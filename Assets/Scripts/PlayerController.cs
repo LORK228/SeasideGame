@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
         rb.angularVelocity = -Rotate_speed * rotateAmount;
         rb.velocity = transform.up * _speed;
         _speed -= 0.005f;
-        print(_speed);
     }
     private void Update()
     {
