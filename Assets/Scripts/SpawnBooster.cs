@@ -6,7 +6,12 @@ public class SpawnBooster : MonoBehaviour
 {
     public GameObject boost;
     private GameObject spawnBoost;
+    private Transform camera;
     // Update is called once per frame
+    private void Start()
+    {
+        camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
    
@@ -14,7 +19,8 @@ public class SpawnBooster : MonoBehaviour
         {
             spawnBoost = Instantiate(boost);
             spawnBoost.name = "Boost";
-            spawnBoost.transform.position = new Vector3(Random.Range(-9, 10), Random.Range(-4, 5), 0);
+            collision.gameObject.GetComponent<PlayerController>()._speed += 1;
+            spawnBoost.transform.position = new Vector3(camera.position.x+Random.Range(-9, 10),camera.position.y+Random.Range(-4, 5), 0);
             Destroy(gameObject);
         }
     }
