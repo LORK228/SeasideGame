@@ -30,17 +30,19 @@ public class PlayerController : MonoBehaviour
         rb.velocity = transform.up * _speed;
 
     }
-    private void OnTriggerEnter(Collider other)
+   
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        switch (other.gameObject.layer)
+        switch (collision.gameObject.layer)
         {
             case 6:
                 Destroy(gameObject);
+                Time.timeScale = 0;
                 break;
             case 8:
                 print(1);
                 break;
         }
-            
     }
 }
