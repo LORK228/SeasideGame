@@ -28,7 +28,7 @@ public class WaterReflectableScript : MonoBehaviour
   void Awake()
   {
     GameObject reflectGo = new GameObject("Water Reflect");
-    reflectGo.transform.parent = this.transform;
+   reflectGo.transform.parent = this.transform;
     reflectGo.transform.localPosition = localPosition;
     reflectGo.transform.localRotation = Quaternion.Euler(localRotation);
     reflectGo.transform.localScale = new Vector3(1, 1, 1);
