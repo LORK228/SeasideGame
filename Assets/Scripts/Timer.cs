@@ -7,7 +7,10 @@ public class Timer : MonoBehaviour
     [SerializeField] private float _speed;
     private float milisecond;
     public static float second;
-
+    private void Start()
+    {
+        second = 0;
+    }
     private void FixedUpdate()
     {
         milisecond += 1 / _speed;

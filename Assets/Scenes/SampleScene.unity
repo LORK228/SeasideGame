@@ -451,7 +451,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1297951877}
   - component: {fileID: 1297951876}
-  - component: {fileID: 1297951875}
   - component: {fileID: 1297951874}
   m_Layer: 0
   m_Name: ReflectionCamera
@@ -493,14 +492,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &1297951875
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1297951873}
-  m_Enabled: 1
 --- !u!20 &1297951876
 Camera:
   m_ObjectHideFlags: 0
@@ -532,7 +523,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 960
+    m_Bits: 896
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 9c891f855b536054d9c8bd7d319be2ab, type: 2}
   m_TargetDisplay: 0
@@ -696,15 +687,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -7
-  m_Sprite: {fileID: 21300000, guid: cf60069d0d17ee647b87c84009c9c13d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 0.007843018, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 12.45, y: 5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &1800214358
@@ -728,11 +719,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030033939569451717, guid: 0565346102f27894fbab6081f8825bfe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.898895
+      value: -9.05
       objectReference: {fileID: 0}
     - target: {fileID: 9030033939569451717, guid: 0565346102f27894fbab6081f8825bfe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.22817898
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 9030033939569451717, guid: 0565346102f27894fbab6081f8825bfe, type: 3}
       propertyPath: m_LocalPosition.z

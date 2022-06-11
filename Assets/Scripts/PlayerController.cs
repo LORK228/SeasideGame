@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -14,8 +15,11 @@ public class PlayerController : MonoBehaviour
     public float Rotate_speed;
     float rotateAmount;
     Vector2 direction;
+    private SpriteRenderer sprite;
     private void Start()
     {
+        Time.timeScale = 1;
+        sprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>(); 
     }
     void FixedUpdate()
@@ -35,7 +39,14 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        text.text = "velocity: " + _speed + " Score: " + Timer.second;
+        if (sprite)
+        {
+            text.text = "velocity: " + _speed + " Score: " + Timer.second;
+        }
+        else if(Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
 
@@ -44,13 +55,14 @@ public class PlayerController : MonoBehaviour
         switch (collision.gameObject.layer)
         {
             case 6:
-                if(Timer.second > PlayerPrefs.GetInt("BestScore", 0))
+                Destroy(sprite);
+                if (Timer.second > PlayerPrefs.GetInt("BestScore", 0))
                 {
                     bestScore = (int)Timer.second;
                     PlayerPrefs.SetInt("BestScore", bestScore);
                 }
-                text.text = "BestScore: " + PlayerPrefs.GetInt("BestScore", 0) + "\n Your Score:" + Timer.second;
-                Destroy(gameObject);
+                text.text = "BestScore: " + PlayerPrefs.GetInt("BestScore", 0) + "\n Your Score:" + Timer.second + "\nPress \"R\" to restart";
+                
                 Time.timeScale = 0;
                 break;
             case 8:
