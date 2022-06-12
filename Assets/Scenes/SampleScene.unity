@@ -30196,7 +30196,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609942755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2694}
+  m_LocalPosition: {x: 0, y: 0, z: -4177}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1836138134}
@@ -30263,7 +30263,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2137037650}
+      - m_Target: {fileID: 2137037651}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: ScaleTime
         m_Mode: 1
@@ -31249,7 +31249,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 416935825303825685, guid: 54f3377bdf5f9104fbf779f3a065a362, type: 2}
   m_audioClip: {fileID: 8300000, guid: 323f28b7488eefc4fa52a9169f541878, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.417
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -36730,6 +36730,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1543713976379369539, guid: 3375e7d1281beb746bad306f2c236766, type: 3}
   m_PrefabInstance: {fileID: 2041054653}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1607592289 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6771444409934000954, guid: 0565346102f27894fbab6081f8825bfe, type: 3}
+  m_PrefabInstance: {fileID: 787877611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1632881451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7292364483470730092, guid: 0f1b05f230ad3504d86f92b2feda4f57, type: 3}
@@ -39295,6 +39300,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1156159996, guid: 2f7b6bd844f5f514da4578197768490a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2067610352, guid: 2f7b6bd844f5f514da4578197768490a, type: 3}
       propertyPath: text
       value: 
@@ -40042,7 +40051,7 @@ GameObject:
   - component: {fileID: 2137037647}
   - component: {fileID: 2137037649}
   - component: {fileID: 2137037648}
-  - component: {fileID: 2137037650}
+  - component: {fileID: 2137037651}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -40058,7 +40067,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137037646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2647}
+  m_LocalPosition: {x: 0, y: 0, z: -3773}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1836138134}
@@ -40166,7 +40175,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137037646}
   m_CullTransparentMesh: 1
---- !u!114 &2137037650
+--- !u!114 &2137037651
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40175,7 +40184,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2137037646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 692686afe7ba0e4448ed3fd92e1d3d76, type: 3}
+  m_Script: {fileID: 11500000, guid: e84b98a8577ee914d8df67822e67c458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 1156159999}
@@ -40358,10 +40367,14 @@ PrefabInstance:
     - target: {fileID: 5542848379192635662, guid: 459259876f5ec684eaefb068b9d2e4a5, type: 3}
       propertyPath: enemy
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1607592289}
     - target: {fileID: 5542848379192635663, guid: 459259876f5ec684eaefb068b9d2e4a5, type: 3}
       propertyPath: m_Name
       value: spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5542848379192635663, guid: 459259876f5ec684eaefb068b9d2e4a5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 459259876f5ec684eaefb068b9d2e4a5, type: 3}

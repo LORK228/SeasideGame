@@ -72,8 +72,9 @@ public class PlayerController : MonoBehaviour
                     PlayerPrefs.SetInt("BestScore", bestScore);
                 }
                 text.text = "BestScore: " + PlayerPrefs.GetInt("BestScore", 0) + "\n Your Score:" + Timer.second + "\nPress \"R\" to restart";
-                
+
                 Time.timeScale = 0;
+
                 break;
             case 0:
                 transform.rotation =new Quaternion(transform.rotation.x,transform.rotation.y,- 90,transform.rotation.w);

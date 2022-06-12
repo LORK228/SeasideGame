@@ -45,7 +45,13 @@ public class spawner : MonoBehaviour
                 break;
         }
         spawned = Instantiate(obj);
+     
         spawned.name = "1";
         spawned.transform.position = new Vector2(spawnx, spawny);
+        if (spawned.GetComponent<BoxCollider2D>().enabled == false)
+        {
+            Destroy(spawned);
+        }
+
     }
 }
