@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class SpawnBooster : MonoBehaviour
 {
+    public float boostParticle;
     public GameObject boost;
     private GameObject spawnBoost;
     private Transform camera;
     private spawner spawner;
     private int count;
+    public AudioClip audioclip;
     // Update is called once per frame
     private void Start()
     {
@@ -20,9 +22,14 @@ public class SpawnBooster : MonoBehaviour
 
         if (collision.gameObject.layer == 7)
         {
+            AudioSource audio = gameObject.GetComponentInChildren<AudioSource>();
+            print(audio);
+            audio.pitch = Random.Range(0.9f, 1.1f);
+            audio.PlayOneShot(audioclip, 1);
+            collision.gameObject.GetComponentInChildren<ParticleSystem>().startLifetime += boostParticle;
             collision.gameObject.GetComponent<PlayerController>()._speed += 0.5f + (collision.transform.position.y / 102);
             spawner.Spawn(boost);
-            Destroy(gameObject);
+            StartCoroutine(dead());
         }
         if (collision.gameObject.layer == 8)
         {
@@ -37,5 +44,12 @@ public class SpawnBooster : MonoBehaviour
             spawner.Spawn(boost);
             Destroy(gameObject);
         }
+    }
+    IEnumerator dead()
+    {
+        Destroy(gameObject.GetComponent<SpriteRenderer>());
+        Destroy(gameObject.GetComponent<BoxCollider2D>());
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 }

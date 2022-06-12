@@ -72,3 +72,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Assets/Scenes/SampleScene.unity
 Assets/Scenes/SampleScene.unity
+Assets/Scripts/PlayerController.cs
+Assets/Scripts/PlayerController.cs
+Assets/Scripts/SpawnBooster.cs

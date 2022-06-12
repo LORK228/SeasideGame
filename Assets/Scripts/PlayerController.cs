@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] public static float speedParticle;
     private int bestScore;
     bool player_dead;
     private Rigidbody2D rb;
@@ -21,7 +22,6 @@ public class PlayerController : MonoBehaviour
     public GameObject rock;
     private void Start()
     {
-        Time.timeScale = 1;
         sprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         spawner = GameObject.FindGameObjectWithTag("Respawn").GetComponent<spawner>();
@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Camera.main.nearClipPlane;
         Vector3 Worldpos = Camera.main.ScreenToWorldPoint(mousePos);
@@ -42,6 +41,7 @@ public class PlayerController : MonoBehaviour
         if (_speed > 0)
         {
             _speed -= 0.002f * _speed;
+            GetComponentInChildren<ParticleSystem>().startLifetime -= speedParticle * Time.fixedDeltaTime;
         }
     }
     private void Update()
