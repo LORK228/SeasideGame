@@ -18,7 +18,7 @@ public class Menu : MonoBehaviour
         {
             Time.timeScale = 0;
             audioPause.TransitionTo(0.5f);
-            GetComponent<TextMeshProUGUI>().text = "BestScore: " + PlayerPrefs.GetInt("BestScore", 0);
+            GetComponent<TextMeshProUGUI>().text = "BestScore: " + PlayerPrefs.GetInt("BestScore", 0); 
         }
         
         else

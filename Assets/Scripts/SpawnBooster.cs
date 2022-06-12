@@ -7,7 +7,7 @@ public class SpawnBooster : MonoBehaviour
     public float boostParticle;
     private GameObject spawnBoost;
     private Transform camera;
-    private spawner spawner;
+    private spawner spawner; 
     private int count;
     public AudioClip audioclip;
     public bool used;

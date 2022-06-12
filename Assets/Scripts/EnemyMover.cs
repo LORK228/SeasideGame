@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMover : MonoBehaviour
+public class EnemyMover : MonoBehaviour 
 {
     public Transform player;
     private Rigidbody2D rb;
@@ -15,7 +15,7 @@ public class EnemyMover : MonoBehaviour
     {
         min = 20;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>(); 
     }
 
 

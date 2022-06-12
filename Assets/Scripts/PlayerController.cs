@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     
 
 
-    [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private TextMeshProUGUI text; 
     [SerializeField] public float speedParticle;
     private int bestScore;
     bool player_dead;

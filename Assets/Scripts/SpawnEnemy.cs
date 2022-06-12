@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    private int storona;
+    private int storona; 
     private int spawnx;
     private int spawny;
     public GameObject enemy;

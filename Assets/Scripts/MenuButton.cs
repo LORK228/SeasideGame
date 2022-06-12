@@ -7,7 +7,7 @@ public class MenuButton : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(Menu.isFirst == false)
+        if(Menu.isFirst == false) 
         {
             Destroy(gameObject);
         }

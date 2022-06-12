@@ -10,7 +10,7 @@ public class ыыыыыыыы : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            GameObject.FindGameObjectWithTag("Respawn").GetComponent<spawner>().Spawn(boost);
+            GameObject.FindGameObjectWithTag("Respawn").GetComponent<spawner>().Spawn(boost); 
         }
     }
 }

@@ -10,7 +10,7 @@ public class Water : MonoBehaviour
     void Start()
     {
         timer = 0;
-        m_arr_material = GetComponent<Renderer>().materials;
+        m_arr_material = GetComponent<Renderer>().materials; 
     }
 
     private void Update()

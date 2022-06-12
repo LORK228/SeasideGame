@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class spawner : MonoBehaviour
-{
+{ 
     private int storona;
     private float spawnx;
     private float spawny;
