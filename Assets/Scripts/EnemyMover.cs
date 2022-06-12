@@ -27,4 +27,11 @@ public class EnemyMover : MonoBehaviour
         rb.velocity = -transform.up * _speed;
 
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z - 90, transform.rotation.w);
+        }
+    }
 }

@@ -43,11 +43,6 @@ public class PlayerController : MonoBehaviour
         {
             _speed -= 0.002f * _speed;
         }
-        if (rad > 10)
-        {
-            spawner.Spawn(rock);
-            
-        }
     }
     private void Update()
     {
@@ -64,6 +59,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         switch (collision.gameObject.layer)
         {
             case 6:
@@ -76,8 +72,8 @@ public class PlayerController : MonoBehaviour
                 
                 Time.timeScale = 0;
                 break;
-            case 8:
-
+            case 0:
+                transform.rotation =new Quaternion(transform.rotation.x,transform.rotation.y,- 90,transform.rotation.w);
                 break;
         }
     }

@@ -45,7 +45,7 @@ public class spawner : MonoBehaviour
                 break;
         }
         spawned = Instantiate(obj);
-        spawned.name = "";
-        spawned.transform.position = new Vector3(spawnx, spawny, 0);
+        spawned.name = "1";
+        spawned.transform.position = new Vector2(spawnx, spawny);
     }
 }

@@ -20,7 +20,12 @@ public class SpawnBooster : MonoBehaviour
 
         if (collision.gameObject.layer == 7)
         {
-            collision.gameObject.GetComponent<PlayerController>()._speed += 0.5f;
+            collision.gameObject.GetComponent<PlayerController>()._speed += 0.5f + (collision.transform.position.y / 102);
+            spawner.Spawn(boost);
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.layer == 8)
+        {
             spawner.Spawn(boost);
             Destroy(gameObject);
         }
