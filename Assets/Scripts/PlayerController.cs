@@ -15,31 +15,43 @@ public class PlayerController : MonoBehaviour
     public float Rotate_speed;
     float rotateAmount;
     Vector2 direction;
+    [HideInInspector] public float rad;
     private SpriteRenderer sprite;
+    private spawner spawner;
+    public GameObject rock;
     private void Start()
     {
         Time.timeScale = 1;
         sprite = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>(); 
+        rb = GetComponent<Rigidbody2D>();
+        spawner = GameObject.FindGameObjectWithTag("Respawn").GetComponent<spawner>();
+        rad = Mathf.Infinity;
     }
     void FixedUpdate()
     {
+
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Camera.main.nearClipPlane;
         Vector3 Worldpos = Camera.main.ScreenToWorldPoint(mousePos);
         Vector2 Worldpos2D = new Vector2(Worldpos.x, Worldpos.y);
-
-        
         direction = Worldpos2D - (Vector2)transform.position;
         direction.Normalize();
         rotateAmount = Vector3.Cross(direction, transform.up).z;
         rb.angularVelocity = -Rotate_speed * rotateAmount;
         rb.velocity = transform.up * _speed;
-        _speed -= 0.005f;
+        if (_speed > 0)
+        {
+            _speed -= 0.002f * _speed;
+        }
+        if (rad > 10)
+        {
+            spawner.Spawn(rock);
+            
+        }
     }
     private void Update()
     {
-        if (sprite)
+        if (Time.timeScale != 0)
         {
             text.text = "velocity: " + _speed + " Score: " + Timer.second;
         }
@@ -55,7 +67,6 @@ public class PlayerController : MonoBehaviour
         switch (collision.gameObject.layer)
         {
             case 6:
-                Destroy(sprite);
                 if (Timer.second > PlayerPrefs.GetInt("BestScore", 0))
                 {
                     bestScore = (int)Timer.second;

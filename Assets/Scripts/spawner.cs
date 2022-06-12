@@ -21,18 +21,29 @@ public class spawner : MonoBehaviour
 
             case 2:
                 spawny = camera.transform.position.y + Random.Range(-5, 6); ;
+                if (spawny < -2)
+                {
+                    spawny = -1;
+                }
                 spawnx = camera.transform.position.x -10;
                 break;
             case 3:
                 spawny = camera.transform.position.y-6;
+                if (spawny < -2)
+                {
+                    spawny = -1;
+                }
                 spawnx = camera.transform.position.x + Random.Range(-10, 11);
                 break;
             case 4:
-                spawny = camera.transform.position.y + Random.Range(-5, 6); ;
+                spawny = camera.transform.position.y + Random.Range(-5, 6);
+                if (spawny < -2)
+                {
+                    spawny = -1;
+                }
                 spawnx = camera.transform.position.x + 10;
                 break;
         }
-        print(spawnx + " " + spawny);
         spawned = Instantiate(obj);
         spawned.name = "";
         spawned.transform.position = new Vector3(spawnx, spawny, 0);
