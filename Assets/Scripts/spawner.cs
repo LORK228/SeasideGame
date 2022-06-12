@@ -48,20 +48,15 @@ public class spawner : MonoBehaviour
         spawned = Instantiate(obj);
         if (spawned.GetComponent<SpawnBooster>() != null)
         {
+            spawned.name = "1";
+            spawned.transform.position = new Vector2(spawnx, spawny);
             if(spawned.GetComponent<SpawnBooster>().used == true)
             {
                 Destroy(spawned);
+                return;
             }
-            else
-            {
-                spawned.name = "1";
-                spawned.transform.position = new Vector2(spawnx, spawny);
-            }
+
         }
-        else
-        {
-            spawned.name = "1";
-            spawned.transform.position = new Vector2(spawnx, spawny);
         }
     }
-}
+

@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 7295862424382746680}
   m_Layer: 8
   m_Name: Boost
-  m_TagString: Untagged
+  m_TagString: booster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boostParticle: 0.3
   audioclip: {fileID: 8300000, guid: 8b1d46e6ea50c694da4ffea492ebd3aa, type: 3}
+  used: 0
   booster: {fileID: 3887675061140585734}
 --- !u!61 &7295862424382746680
 BoxCollider2D:

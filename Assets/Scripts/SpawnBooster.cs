@@ -21,6 +21,28 @@ public class SpawnBooster : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        foreach (GameObject wp in GameObject.FindGameObjectsWithTag("booster"))
+        {
+            if (Vector2.Distance(transform.position, wp.transform.position) < 2 && Vector2.Distance(transform.position, wp.transform.position) != 0)
+            {
+                switch (Random.Range(0, 4))
+                {
+                    case 0:
+                        transform.position = new Vector2(transform.position.x, transform.position.y + 2);
+                        return;
+                    case 1:
+                        transform.position = new Vector2(transform.position.x, transform.position.y - 2);
+                        return;
+                    case 2:
+                        transform.position = new Vector2(transform.position.x + 2, transform.position.y );
+                        return;
+                    case 3:
+                        transform.position = new Vector2(transform.position.x - 2, transform.position.y + 4);
+                        return;
+                }
+                
+            }
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
