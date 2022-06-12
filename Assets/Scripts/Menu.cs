@@ -25,6 +25,7 @@ public class Menu : MonoBehaviour
         {
             audioNormal.TransitionTo(0.5f);
             Time.timeScale = 1;
+            particle.gameObject.SetActive(true);
         }
         
     }
