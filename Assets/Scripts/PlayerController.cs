@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] public static float speedParticle;
+    [SerializeField] public  float speedParticle;
     private int bestScore;
     bool player_dead;
     private Rigidbody2D rb;

@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e498efa1b4d6c489c3634e93b54105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boostParticle: 0.3
   boost: {fileID: 3887675061140585734}
   audioclip: {fileID: 8300000, guid: 74157ad6f171c2440ad7f5de2d0045d3, type: 3}
 --- !u!61 &7295862424382746680
