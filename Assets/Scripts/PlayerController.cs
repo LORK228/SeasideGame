@@ -5,11 +5,15 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
+public class PlayerController : MonoBehaviour 
+{ 
 
-public class PlayerController : MonoBehaviour
-{
+    
+
+
     [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] public  float speedParticle;
+    [SerializeField] public float speedParticle;
     private int bestScore;
     bool player_dead;
     private Rigidbody2D rb;
@@ -22,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private spawner spawner;
     public GameObject rock;
     public AudioMixerSnapshot audioPause1;
+
     private void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -50,9 +55,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Time.timeScale != 0)
         {
-            text.text = "velocity: " + _speed + " Score: " + Timer.second;
+            text.text = "velocity: " + Math.Round(_speed, 1) + " Score: " + Timer.second;
         }
-        else if(Input.GetKey(KeyCode.R))
+        else if (Input.GetKey(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -61,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+
         switch (collision.gameObject.layer)
         {
             case 6:
@@ -77,8 +82,10 @@ public class PlayerController : MonoBehaviour
 
                 break;
             case 0:
-                transform.rotation =new Quaternion(transform.rotation.x,transform.rotation.y,- 90,transform.rotation.w);
+                transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, -90, transform.rotation.w);
                 break;
         }
     }
 }
+
+

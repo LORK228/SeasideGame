@@ -44,14 +44,24 @@ public class spawner : MonoBehaviour
                 spawnx = camera.transform.position.x + 10;
                 break;
         }
-        spawned = Instantiate(obj);
-     
-        spawned.name = "1";
-        spawned.transform.position = new Vector2(spawnx, spawny);
-        if (spawned.GetComponent<BoxCollider2D>().enabled == false)
-        {
-            Destroy(spawned);
-        }
 
+        spawned = Instantiate(obj);
+        if (spawned.GetComponent<SpawnBooster>() != null)
+        {
+            if(spawned.GetComponent<SpawnBooster>().used == true)
+            {
+                Destroy(spawned);
+            }
+            else
+            {
+                spawned.name = "1";
+                spawned.transform.position = new Vector2(spawnx, spawny);
+            }
+        }
+        else
+        {
+            spawned.name = "1";
+            spawned.transform.position = new Vector2(spawnx, spawny);
+        }
     }
 }

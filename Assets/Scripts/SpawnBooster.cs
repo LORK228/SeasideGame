@@ -10,53 +10,51 @@ public class SpawnBooster : MonoBehaviour
     private spawner spawner;
     private int count;
     public AudioClip audioclip;
-    private bool used;
-    // Update is called once per frame
+    public bool used;
+    public GameObject booster;
     private void Start()
     {
         used = false;
         camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
         spawner = GameObject.FindGameObjectWithTag("Respawn").GetComponent<spawner>();
+        if (GetComponent<BoxCollider2D>() == false)
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.layer == 7 && used == false)
         {
-            used = true;
+            
             AudioSource audio = gameObject.GetComponentInChildren<AudioSource>();
             print(audio);
             audio.pitch = Random.Range(0.9f, 1.1f);
             audio.PlayOneShot(audioclip);
             collision.gameObject.GetComponentInChildren<ParticleSystem>().startLifetime += boostParticle;
             collision.gameObject.GetComponent<PlayerController>()._speed += 0.4f + (collision.transform.position.y / 102);
-            spawner.Spawn(gameObject);
+            spawner.Spawn(booster);
             StartCoroutine(dead());
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == 6 && used == false)
+   private void Update()
+   {
+       if ((Mathf.Abs(camera.position.x - transform.position.x) > 10 || Mathf.Abs(camera.position.y - transform.position.y) > 6))
         {
-            used = true;
-            spawner.Spawn(gameObject);
-            StartCoroutine(dead());
-        }
-    }
-    private void Update()
-    {
-        if ((Mathf.Abs(camera.position.x - transform.position.x) > 10 || Mathf.Abs(camera.position.y - transform.position.y) > 6) && used == false)
-        {
-            used = true;
-            spawner.Spawn(gameObject);
-            StartCoroutine(dead());
-        }
+            if(used == false) { 
+            spawner.Spawn(booster);
+            Destroy(booster);
+            }
+      }
+        
     }
     private IEnumerator dead()
     {
+        used = true;
         Destroy(gameObject.GetComponent<SpriteRenderer>());
         Destroy(gameObject.GetComponent<BoxCollider2D>());
-        yield return new WaitForSeconds(2);
-        Destroy(gameObject);
+        yield return new WaitForSeconds(1);
+        Destroy(booster);
     }
 }

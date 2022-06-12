@@ -139,7 +139,6 @@ GameObject:
   - component: {fileID: 7720405251767387903}
   - component: {fileID: 1883539229944529823}
   - component: {fileID: 7295862424382746680}
-  - component: {fileID: 66190247}
   m_Layer: 8
   m_Name: Boost
   m_TagString: Untagged
@@ -226,8 +225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boostParticle: 0.3
-  boost: {fileID: 3887675061140585734}
   audioclip: {fileID: 8300000, guid: 8b1d46e6ea50c694da4ffea492ebd3aa, type: 3}
+  booster: {fileID: 3887675061140585734}
 --- !u!61 &7295862424382746680
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -254,24 +253,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 8}
   m_EdgeRadius: 0
---- !u!50 &66190247
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3887675061140585734}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
