@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Time.timeScale != 0)
         {
-            text.text = "velocity: " + Math.Round(_speed, 1) + " Score: " + Timer.second;
+            text.text = "velocity: " + Math.Round(_speed, 1) + " Score: " + Timer.second; 
         }
         else if (Input.GetKey(KeyCode.R))
         {
