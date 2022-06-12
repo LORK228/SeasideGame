@@ -34,7 +34,7 @@ public class SpawnBooster : MonoBehaviour
             audio.PlayOneShot(audioclip);
             collision.gameObject.GetComponentInChildren<ParticleSystem>().startLifetime += boostParticle;
             collision.gameObject.GetComponent<PlayerController>()._speed += 0.4f + (collision.transform.position.y / 102);
-            spawner.Spawn(booster);
+            spawner.Spawn(gameObject);
             StartCoroutine(dead());
         }
     }
@@ -42,9 +42,10 @@ public class SpawnBooster : MonoBehaviour
    {
        if ((Mathf.Abs(camera.position.x - transform.position.x) > 10 || Mathf.Abs(camera.position.y - transform.position.y) > 6))
         {
-            if(used == false) { 
-            spawner.Spawn(booster);
-            Destroy(booster);
+            if(used == false) {
+                print("1");
+            spawner.Spawn(gameObject);
+            Destroy(gameObject);
             }
       }
         
@@ -55,6 +56,6 @@ public class SpawnBooster : MonoBehaviour
         Destroy(gameObject.GetComponent<SpriteRenderer>());
         Destroy(gameObject.GetComponent<BoxCollider2D>());
         yield return new WaitForSeconds(1);
-        Destroy(booster);
+        Destroy(gameObject);
     }
 }

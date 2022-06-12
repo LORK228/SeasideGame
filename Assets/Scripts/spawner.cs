@@ -16,11 +16,11 @@ public class spawner : MonoBehaviour
         {
             case 1:
                 spawny = camera.transform.position.y+6;
-                spawnx = camera.transform.position.x + Random.Range(-10, 11);
+                spawnx = camera.transform.position.x + Random.Range(-9, 10);
                 break;
 
             case 2:
-                spawny = camera.transform.position.y + Random.Range(-5, 6); ;
+                spawny = camera.transform.position.y + Random.Range(-6, 7); ;
                 if (spawny < -2)
                 {
                     spawny = -1;
@@ -33,10 +33,10 @@ public class spawner : MonoBehaviour
                 {
                     spawny = -1;
                 }
-                spawnx = camera.transform.position.x + Random.Range(-10, 11);
+                spawnx = camera.transform.position.x + Random.Range(-9, 10);
                 break;
             case 4:
-                spawny = camera.transform.position.y + Random.Range(-5, 6);
+                spawny = camera.transform.position.y + Random.Range(-6, 7);
                 if (spawny < -2)
                 {
                     spawny = -1;
