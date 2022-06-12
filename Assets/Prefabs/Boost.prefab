@@ -41,7 +41,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3083637214573418425, guid: 54f3377bdf5f9104fbf779f3a065a362, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 74157ad6f171c2440ad7f5de2d0045d3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8b1d46e6ea50c694da4ffea492ebd3aa, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 3
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boostParticle: 0.3
   boost: {fileID: 3887675061140585734}
-  audioclip: {fileID: 8300000, guid: 74157ad6f171c2440ad7f5de2d0045d3, type: 3}
+  audioclip: {fileID: 8300000, guid: 8b1d46e6ea50c694da4ffea492ebd3aa, type: 3}
 --- !u!61 &7295862424382746680
 BoxCollider2D:
   m_ObjectHideFlags: 0
