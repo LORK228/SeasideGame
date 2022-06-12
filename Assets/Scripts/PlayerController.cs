@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sprite;
     private spawner spawner;
     public GameObject rock;
+    public AudioMixerSnapshot audioPause1;
     private void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -63,6 +65,7 @@ public class PlayerController : MonoBehaviour
         switch (collision.gameObject.layer)
         {
             case 6:
+                audioPause1.TransitionTo(0.5f);
                 if (Timer.second > PlayerPrefs.GetInt("BestScore", 0))
                 {
                     bestScore = (int)Timer.second;
