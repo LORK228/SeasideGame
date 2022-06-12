@@ -9,9 +9,11 @@ public class EnemyMover : MonoBehaviour
     public float _speed;
     public float Rotate_speed;
     float rotateAmount;
+    int min;
     Vector2 direction;
     void Start()
     {
+        min = 20;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -25,6 +27,11 @@ public class EnemyMover : MonoBehaviour
         rotateAmount = Vector3.Cross(direction, transform.up).z;
         rb.angularVelocity = Rotate_speed * rotateAmount;
         rb.velocity = -transform.up * _speed;
+        if (Timer.second == min)
+        {
+            _speed += 1f;
+            min += 20;
+        }
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
