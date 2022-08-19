@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
 
     [SerializeField] private TextMeshProUGUI text; 
-    [SerializeField] public float speedParticle;
+
     private int bestScore;
     bool player_dead;
     private Rigidbody2D rb;
@@ -47,12 +47,15 @@ public class PlayerController : MonoBehaviour
         rb.velocity = transform.up * _speed;
         if (_speed > 0)
         {
-            _speed -= 0.002f * _speed;
-            GetComponentInChildren<ParticleSystem>().startLifetime -= speedParticle * Time.fixedDeltaTime;
+            _speed -= 0.0016f * _speed;
         }
     }
     private void Update()
     {
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            Time.timeScale -= 0.01f;
+        }
         if (Time.timeScale != 0)
         {
             text.text = "velocity: " + Math.Round(_speed, 1) + " Score: " + Timer.second; 

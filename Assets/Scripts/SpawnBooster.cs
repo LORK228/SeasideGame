@@ -55,7 +55,6 @@ public class SpawnBooster : MonoBehaviour
             audio.pitch = Random.Range(0.9f, 1.1f);
             audio.volume = 0.1f;
             audio.PlayOneShot(audioclip);
-            collision.gameObject.GetComponentInChildren<ParticleSystem>().startLifetime += boostParticle;
             collision.gameObject.GetComponent<PlayerController>()._speed += 0.4f + (collision.transform.position.y / 102);
             spawner.Spawn(gameObject);
             StartCoroutine(dead());
